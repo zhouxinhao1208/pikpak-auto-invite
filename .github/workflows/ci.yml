@@ -1,17 +1,20 @@
-name: weixinStep
+name: pikpakAutoInvite
 on:
   workflow_dispatch:
   schedule:
-    # 每天9点半执行
-    - cron:  '0 0 * * *'
+    # 每天新加坡时间凌晨 00:00:01 执行
+    - cron:  '1 16 * * *'
+  push:
+    branches:
+      - master
 
 jobs:
   run-python-script:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
       - run: pip install -r requirements.txt
-      - run: python weixinStep.py
+      - run: python pikpakAutoInvite.py
