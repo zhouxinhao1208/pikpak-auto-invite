@@ -17,4 +17,4 @@ jobs:
         with:
           python-version: '3.8'
       - run: pip install -r requirements.txt
-      - run: python pikpakAutoInvite.py
+      - run: python ＃pikpakAutoInvite.py
